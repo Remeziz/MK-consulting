@@ -29,7 +29,7 @@ After `Terraform apply` runs:
 1️⃣ Find the public IP address in the **Terraform Apply** step logs  
 2️⃣ Open your browser and go to:
 
-http://<public-ip>
+http://public-ip-from-Terraform apply
 
 You should see the contents of `hello.txt`.
 
