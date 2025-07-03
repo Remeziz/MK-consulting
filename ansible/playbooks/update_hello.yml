@@ -1,0 +1,25 @@
+---
+- name: Set up Nginx and deploy hello.txt
+  hosts: aws_ec2
+  become: true
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+  tasks:
+    - name: Install Nginx
+      yum:
+        name: nginx
+        state: present
+
+    - name: Enable and start Nginx
+      service:
+        name: nginx
+        state: started
+        enabled: true
+
+    - name: Copy hello.txt
+      template:
+        src: templates/hello.txt
+        dest: /usr/share/nginx/html/index.html
+        owner: root
+        group: root
+        mode: '0644'

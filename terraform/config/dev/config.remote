@@ -1,0 +1,5 @@
+bucket         = "tf-state-mk-consulting"
+dynamodb_table = "mk-consulting"
+encrypt        = true
+key            = "main/main.tfstate"
+region         = "eu-central-1"
